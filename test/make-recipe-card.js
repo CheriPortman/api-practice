@@ -1,16 +1,16 @@
-import meals from '../data/meals.js';
+import meal from '../data/meal.js';
 
 const test = QUnit.test;
 
-QUnit.module('recipe card template');
+QUnit.module('meal card template');
 
 
-function makeMealCard(meals) {
+function makeMealCard(meal) {
     const html = /*html*/`
         <li>
-            <p>${meals[0].strMeal}</p>
-            <img src=${meals[0].strMealThumb} alt="image of ${meals[0].strMeal}">
-            <p>Meal Id: ${meals[0].idMeal}</p>
+            <p>${meal.strMeal}</p>
+            <img src=${meal.strMealThumb} alt="image of ${meal.strMeal}">
+            <p>Meal Id: ${meal.idMeal}</p>
         </li>
     `;
     const template = document.createElement('template');
@@ -28,7 +28,7 @@ test('make meal card', assert => {
         </li>
     `;
     // act
-    const result = makeMealCard(meals);
+    const result = makeMealCard(meal);
     // assert
     assert.htmlEqual(result, expected);
 });
