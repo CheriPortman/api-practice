@@ -1,2 +1,2 @@
 import './html-equal.js';
-import './make-recipe-card.js';
+import './make-meal-card.js';
