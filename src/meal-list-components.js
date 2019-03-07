@@ -1,3 +1,12 @@
+const recipeBox = document.getElementById('recipe-box');
+
+export default function renderMealCards(meals) {
+    meals.forEach(meal => {
+        const dom = makeMealCard(meal);
+        recipeBox.appendChild(dom);
+    });   
+}
+
 export function makeMealCard(meal) {
     const html = /*html*/`
         <li>

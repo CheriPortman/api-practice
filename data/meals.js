@@ -1,4 +1,4 @@
-export default [
+const meals = [
     {
         'strMeal': 'Chicken Couscous',
         'strMealThumb': 'https://www.themealdb.com/images/media/meals/qxytrx1511304021.jpg',
@@ -30,3 +30,5 @@ export default [
         'idMeal': '52933'
     }
 ];
+
+export default meals;

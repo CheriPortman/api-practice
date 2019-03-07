@@ -1,5 +1,5 @@
 import meal from '../data/meal.js';
-import { makeMealCard } from '../src/make-meal-card.js';
+import { makeMealCard } from '../src/meal-list-components.js';
 const test = QUnit.test;
 
 QUnit.module('meal card template');
