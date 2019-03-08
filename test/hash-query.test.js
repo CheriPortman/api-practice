@@ -16,6 +16,15 @@ function writePageToQuery(existingQuery, page) {
     return searchParams.toString();
 }
 
+function readFromQuery(query) {
+    const searchParams = new URLSearchParams(query);
+    const queryOptions = {
+        searchTerm: searchParams.get('searchTerm'),
+        page: parseInt(searchParams.get('page'))
+    };
+    return queryOptions;
+}
+
 test('set search to query', assert => {
     //arrange
     const expected = 'searchTerm=chicken&page=1';
@@ -48,4 +57,17 @@ test('add page to query', assert => {
     const result = writePageToQuery(existingQuery, page);
     //assert
     assert.equal(result, expected);
+});
+
+test('read options from query', assert => {
+    //arrange
+    const query = 'searchTerm=beef&page=2';
+    const expected = {
+        searchTerm: 'beef',
+        page: 2
+    };
+    //act
+    const result = readFromQuery(query);
+    //assert
+    assert.deepEqual(result, expected);
 });
