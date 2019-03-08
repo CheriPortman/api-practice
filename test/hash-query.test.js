@@ -9,7 +9,7 @@ function writeSearchToQuery(existingQuery, searchTerm) {
     return searchParams.toString();
 }   
 
-test('add search to empty query', assert => {
+test('set search to query', assert => {
     //arrange
     const expected = 'searchTerm=chicken&page=1';
     const existingQuery = '';   //establishing an empty query
@@ -19,4 +19,15 @@ test('add search to empty query', assert => {
     //assert
     assert.equal(result, expected);
     console.log(result);
+});
+
+test('adds search to existing query', assert => {
+    //arrange
+    const expected = 'searchTerm=beef&page=1';
+    const existingQuery = 'searchTerm=chicken&page=1';
+    const searchTerm = 'beef';
+    //act
+    const result = writeSearchToQuery(existingQuery, searchTerm);
+    //assert
+    assert.equal(result, expected);
 });
