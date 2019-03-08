@@ -1,29 +1,7 @@
+import { writeSearchToQuery, writePageToQuery, readFromQuery } from '../src/hash-query.js';
+
 const test = QUnit.test;
 QUnit.module('hash-query tests');
-
-
-function writeSearchToQuery(existingQuery, searchTerm) {
-    const searchParams = new URLSearchParams(existingQuery); //currently set to empty string
-    searchParams.set('searchTerm', searchTerm);
-    searchParams.set('page', 1);
-    return searchParams.toString();
-}   
-
-function writePageToQuery(existingQuery, page) {
-    const searchParams = new URLSearchParams(existingQuery);
-    searchParams.set('searchTerm', 'beef');
-    searchParams.set('page', page);
-    return searchParams.toString();
-}
-
-function readFromQuery(query) {
-    const searchParams = new URLSearchParams(query);
-    const queryOptions = {
-        searchTerm: searchParams.get('searchTerm'),
-        page: parseInt(searchParams.get('page'))
-    };
-    return queryOptions;
-}
 
 test('set search to query', assert => {
     //arrange
