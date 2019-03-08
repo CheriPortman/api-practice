@@ -18,12 +18,24 @@ h1 {
     margin: 5px;
 }
 
+#try-again {
+    font-size: 1.2em;
+    background: red;
+    text-align: center;
+    margin: 15px;
+}
+
 input {
     height: 2em;
 }
 
 button {
     padding: 5px;
+}
+
+#page-buttons {
+    display: flex;
+    justify-content: center;
 }
 
 ul {

@@ -8,7 +8,6 @@ export default function renderMealCards(meals) {
     }
 
     clearCards();
-    
     meals.forEach(meal => {
         const dom = makeMealCard(meal);
         recipeBox.appendChild(dom);
@@ -22,7 +21,6 @@ function noResults() {
     
     tryAgain.innerHTML = noMeals;
 }
-
 
 export function makeMealCard(meal) {
     const html = /*html*/`
