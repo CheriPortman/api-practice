@@ -1,12 +1,28 @@
 const recipeBox = document.getElementById('recipe-box');
+const tryAgain = document.getElementById('try-again');
 
 export default function renderMealCards(meals) {
-    clearCards()
+    if(!meals) {
+        noResults();
+        return;
+    }
+
+    clearCards();
+    
     meals.forEach(meal => {
         const dom = makeMealCard(meal);
         recipeBox.appendChild(dom);
     });   
 }
+
+function noResults() {
+    const noMeals = /*html*/`
+        <p>Your selected main ingredient is not in the database</p>
+    `;
+    
+    tryAgain.innerHTML = noMeals;
+}
+
 
 export function makeMealCard(meal) {
     const html = /*html*/`

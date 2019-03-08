@@ -1,17 +1,17 @@
 import { writeSearchToQuery } from './hash-query.js';
 
 const searchForm = document.getElementById('search-form');
-const mainIngredientNode = document.getElementById('main-ingredient');
+const MealNameNode = document.getElementById('meal-name');
 
 searchForm.addEventListener('submit', event => {
     event.preventDefault();
 
-    const mainIngredient = mainIngredientNode.value;
+    const MealName = MealNameNode.value;
     const existingQuery = window.location.hash.slice(1);
-    const newQuery = writeSearchToQuery(existingQuery, mainIngredient);
+    const newQuery = writeSearchToQuery(existingQuery, MealName);
     window.location.hash = newQuery;
 });
 
-export function updateMainIngredient(searchTerm) {
-    mainIngredientNode.value = searchTerm;
+export function updateMealName(searchTerm) {
+    MealNameNode.value = searchTerm;
 }
