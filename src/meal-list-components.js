@@ -1,6 +1,7 @@
 const recipeBox = document.getElementById('recipe-box');
 
 export default function renderMealCards(meals) {
+    clearCards()
     meals.forEach(meal => {
         const dom = makeMealCard(meal);
         recipeBox.appendChild(dom);
@@ -21,3 +22,8 @@ export function makeMealCard(meal) {
     return template.content;
 }
 
+function clearCards() {
+    while(recipeBox.children.length > 0) {
+        recipeBox.lastElementChild.remove();
+    }
+}
