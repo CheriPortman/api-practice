@@ -6,6 +6,7 @@ const nextButton = document.getElementById('next-button');
 previousButton.addEventListener('click', () => {
     const existingQuery = window.location.hash.slice(1);
     const queryOptions = readFromQuery(existingQuery); 
+    previousButton.disabled = queryOptions.page <= 1;
     queryOptions.page--;
     const newQuery = writePageToQuery(existingQuery, queryOptions.page);
     window.location.hash = newQuery;
@@ -14,6 +15,7 @@ previousButton.addEventListener('click', () => {
 nextButton.addEventListener('click', () => {
     const existingQuery = window.location.hash.slice(1);
     const queryOptions = readFromQuery(existingQuery);
+    // nextButton.disabled = queryOptions.page >=
     queryOptions.page++;
     const newQuery = writePageToQuery(existingQuery, queryOptions.page);
     window.location.hash = newQuery;
