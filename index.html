@@ -13,13 +13,15 @@
 
     <main>
 
-        <ul id="recipe-box">
-            <li>
-                <p>Chicken Couscous</p>
-                <img src="https://www.themealdb.com/images/media/meals/qxytrx1511304021.jpg" alt="image of Chicken Couscous">
-                <p>Meal Id: 52850</p>
-            </li>
-        </ul>
+        <section id='filter-bar'>
+            <form id=search-form>
+                <!-- filter by main ingredient -->
+                <input type="text" name="main-ingredient" id="main-ingredient">
+                <button>find me a meal</button>
+            </form>
+        </section>
+
+        <ul id="recipe-box"></ul>
 
     </main>
 
