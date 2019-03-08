@@ -13,12 +13,21 @@
 
     <main>
 
-        <section id='filter-bar'>
-            <form id=search-form>
+        <section id="filter-bar">
+            <form id="search-form">
                 <!-- filter by main ingredient -->
                 <input type="text" name="main-ingredient" id="main-ingredient">
                 <button>find me a meal</button>
             </form>
+        </section>
+        
+        <!-- add navigation buttons -->
+        <section id="page-buttons">
+            <button id="previous-button">&lt; previous</button>
+            <span id="current-page">1</span>
+            of
+            <span id="next-page">10</span>
+            <button id="next-button">next &gt;</button>
         </section>
 
         <ul id="recipe-box"></ul>
