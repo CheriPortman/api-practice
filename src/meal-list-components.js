@@ -8,6 +8,7 @@ export default function renderMealCards(meals) {
     }
 
     clearCards();
+    
     meals.forEach(meal => {
         const dom = makeMealCard(meal);
         recipeBox.appendChild(dom);

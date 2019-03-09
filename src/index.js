@@ -2,13 +2,10 @@
 import renderMealCards from './meal-list-components.js';
 import './search-component.js';
 import { updateMealName } from './search-component.js';
-import './paging-component.js';
+import { loadPaging } from './paging-component.js';
 import { readFromQuery } from './hash-query.js';
 import makeSearchMealUrl from './make-search-meal-url.js';
 
-// renderMealCards(meals);
-
-//add event listener to hashchange in url 
 window.addEventListener('hashchange', () => {
     const existingQuery = window.location.hash.slice(1);
     const queryOptions = readFromQuery(existingQuery);
@@ -20,6 +17,7 @@ window.addEventListener('hashchange', () => {
         .then(result => result.meals)
         .then(meals => {
             renderMealCards(meals);
+            loadPaging(meals);
         });
     console.log('index.js, queryOptions:', queryOptions);
 });
